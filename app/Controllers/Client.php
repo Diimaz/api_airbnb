@@ -3,7 +3,11 @@
 namespace App\Controllers;
 
 use Exception;
+use App\Models\ClientModel;
 use App\Models\UserModel;
+use App\Models\PaisesModel;
+use App\Models\DepartamentoModel;
+use App\Models\MunicipioModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
@@ -18,12 +22,37 @@ class Client extends BaseController
         ]);
     }
 
+    public function paises()
+    {
+        $model = new PaisesModel();
+        return $this->getResponse([
+            'paises' => $model->findAll()
+        ]);
+    }
+
+    public function departamentos($id)
+    {
+        $model = new DepartamentoModel();
+        $model->departamento($id);
+        return $this->getResponse([
+            'departamentos' => $model->findAll()
+        ]);
+    }
+
+    public function municipios($id)
+    {
+        $model = new MunicipioModel();
+        $model->municipio($id);
+        return $this->getResponse([
+            'municipios' => $model->findAll()
+        ]);
+    }
+
     public function store()
     {
         $rules = [
             'name' => 'required',
             'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[client.email]',
-            'retainer_fee' => 'required|max_length[255]'
         ];
 
         $input = $this->getRequestInput($this->request);
