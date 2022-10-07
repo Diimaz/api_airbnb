@@ -44,6 +44,9 @@ $routes->get('paises', 'Client::paises');
 $routes->get('departamentos/(:num)', 'Client::departamentos/$1');
 $routes->get('municipios/(:num)', 'Client::municipios/$1');
 
+
+$routes->post('pagos', 'Pagos::pagos');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
