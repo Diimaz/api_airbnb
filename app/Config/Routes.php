@@ -40,12 +40,15 @@ $routes->get('user/(:num)', 'Client::show/$1');
 $routes->post('user/(:num)', 'Client::update/$1');
 $routes->delete('user/(:num)', 'Client::destroy/$1');
 
+$routes->post('login', 'Auth::login');
+
 $routes->get('paises', 'Client::paises');
 $routes->get('departamentos/(:num)', 'Client::departamentos/$1');
 $routes->get('municipios/(:num)', 'Client::municipios/$1');
 
 
 $routes->post('pagos', 'Pagos::pagos');
+$routes->post('filtros', 'Filtros::filtros');
 
 /*
  * --------------------------------------------------------------------

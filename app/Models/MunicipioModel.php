@@ -12,6 +12,7 @@ class MunicipioModel extends Model
     ];*/
 
     protected $table = 'tbl_municipios';
+    protected $primaryKey = 'idMunicipio';
     protected $allowedFields = ['municipio'];
 
 
