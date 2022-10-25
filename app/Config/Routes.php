@@ -45,12 +45,12 @@ $routes->post('login', 'Auth::login');
 $routes->get('servicios', 'Servicios::servicios');
 $routes->get('servicios/(:num)', 'Servicios::servicio/$1');
 $routes->get('servicios/reservas/(:num)', 'Servicios::servicioReserva/$1');
-$routes->get('anfitriones', 'Client::anfitriones');
+//$routes->get('anfitriones', 'Client::anfitriones');
 $routes->get('municipioss', 'Servicios::municipioss');
-$routes->get('municipiosss', 'Client::municipioss');
-$routes->get('tarifas', 'Client::tarifas');
-$routes->get('tipoHospedajes', 'Client::tiposHospedajes');
-$routes->get('usuarios', 'Client::usuarios');
+//$routes->get('municipiosss', 'Client::municipioss');
+//$routes->get('tarifas', 'Client::tarifas');
+//$routes->get('tipoHospedajes', 'Client::tiposHospedajes');
+//$routes->get('usuarios', 'Client::usuarios');
 
 $routes->get('paises', 'Servicios::paises');
 $routes->get('departamentos/(:num)', 'Servicios::departamentos/$1');
