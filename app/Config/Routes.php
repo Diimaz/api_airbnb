@@ -55,6 +55,7 @@ $routes->get('municipioss', 'Servicios::municipioss');
 $routes->get('paises', 'Servicios::paises');
 $routes->get('departamentos/(:num)', 'Servicios::departamentos/$1');
 $routes->get('municipios/(:num)', 'Servicios::municipios/$1');
+$routes->get('usuarios/(:num)', 'Servicios::usuarios/$1');
 
 
 $routes->post('pagos', 'Pagos::pagos');
