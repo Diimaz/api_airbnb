@@ -26,8 +26,7 @@ class Servicios extends BaseController
         $modelTipoHospedaje = model('TiposHospedajesModel');
         return $this->getResponse([
             'message' => 'Servicios',
-            'servicios' => $modelServicio->findAll(),
-            'clients' => $modelServicio->findAll(),
+            'servicios' => $modelServicio->where('estatus', 1)->findAll(),
             'usuarios' => $modelUsuario->findAll(),
             'anfitriones' => $modelAnfitrion->findAll(),
             'municipios' => $modelMunicio->findAll(),
