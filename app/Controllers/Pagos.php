@@ -141,7 +141,7 @@ class Pagos extends BaseController
             ]);
         }
 
-        $actualizarServicio = [
+        /*$actualizarServicio = [
             'idServicio' => $input['idServicio'], 
             'disponibilidad' => 1,
         ];
@@ -150,7 +150,7 @@ class Pagos extends BaseController
             return $this->getResponse([
                 'message' => 'error'
             ]);
-        }
+        }*/
         
         return $this->getResponse([
             'message' => 'Pago realizado con exito',
