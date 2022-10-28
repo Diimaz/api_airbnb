@@ -9,7 +9,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 class Filtros extends BaseController
 {
     public function filtros(){
-        $input = $this->getRequestInput($this->request);
+      /*  $input = $this->getRequestInput($this->request);
         if(!isset($_POST['nombre'])){
             return $this->getResponse([
                 'message' => 'error'
@@ -55,6 +55,49 @@ class Filtros extends BaseController
 
         if(!$rules->withRequest($this->request)->run()){
             return $this->getResponse($rules->getErrors(), ResponseInterface::HTTP_BAD_REQUEST);
+        }*/
+
+        $rules = [  
+            'precioInicio' => 'required|numeric',
+            'precioFinal' => 'required|numeric',
+            'idAnfitrion' => 'required',
+            'idMunicipio' => 'required',
+            'idTipoHospedaje' => 'required',
+            
+
+        ];
+
+        $errors = [
+            'precioInicio' => [
+                'required' => 'Digite el precio de inicio',
+                'numeric' => 'Solo digite numeros',
+               
+            ],
+            'precioFinal' => [
+                'required' => 'Digite el precio final',
+                'numeric' => 'Solo digite numeros',
+               
+            ],
+            'idAnfitrion' => [
+                'required' => 'Digite un ID del Anfitrion',
+               
+               
+            ],
+            'idMunicipio' => [
+                'required' => 'Digite un ID del Municipio',
+               
+            ],
+            'idTipoHospedaje' => [
+                'required' => 'Digite un ID del Hospedaje',
+               
+            ],
+
+        ];
+
+        $input = $this->getRequestInput($this->request);
+
+        if (!$this->validateRequest($input, $rules, $errors)) {
+            return $this->getResponse($this->validator->getErrors(), ResponseInterface::HTTP_BAD_REQUEST);
         }
 
         $tarifaModel = model('TarifasModel');
@@ -66,7 +109,7 @@ class Filtros extends BaseController
         if($input['idAnfitrion'] == 'all'){
             $arrayAnfitriones = $anfitrionModel->findColumn('idAnfitrion');
         }else{
-            $arrayAnfitriones = $anfitrionModel-Where('idAnfitrion',$input['idAnfitrion'])->findColumn('idAnfitrion');
+            $arrayAnfitriones = $anfitrionModel->Where('idAnfitrion',$input['idAnfitrion'])->findColumn('idAnfitrion');
             if($arrayAnfitriones == null){
                 return $this->getResponse([
                     'message' => 'Este anfitrion no existe',
@@ -74,7 +117,6 @@ class Filtros extends BaseController
             }
             $arrayAnfitriones[] = $input['idAnfitrion'];
         }
-
 
         if($input['idMunicipio'] == 'all'){
             $arrayMunicipios = $municipioModel->findColumn('idMunicipio');

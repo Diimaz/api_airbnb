@@ -48,6 +48,7 @@ $routes->get('usuarios/(:num)', 'Servicios::usuario/$1');
 $routes->get('servicios/reservas/(:num)', 'Servicios::servicioReserva/$1');
 //$routes->get('anfitriones', 'Client::anfitriones');
 $routes->get('municipioss', 'Servicios::municipioss');
+//$routes->get('municipiosss', 'Client::municipioss');
 //$routes->get('tarifas', 'Client::tarifas');
 //$routes->get('tipoHospedajes', 'Client::tiposHospedajes');
 //$routes->get('usuarios', 'Client::usuarios');
@@ -55,6 +56,7 @@ $routes->get('municipioss', 'Servicios::municipioss');
 $routes->get('paises', 'Servicios::paises');
 $routes->get('departamentos/(:num)', 'Servicios::departamentos/$1');
 $routes->get('municipios/(:num)', 'Servicios::municipios/$1');
+$routes->get('usuarios/(:num)', 'Servicios::usuarios/$1');
 
 
 $routes->post('pagos', 'Pagos::pagos');

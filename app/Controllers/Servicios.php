@@ -26,8 +26,7 @@ class Servicios extends BaseController
         $modelTipoHospedaje = model('TiposHospedajesModel');
         return $this->getResponse([
             'message' => 'Servicios',
-            'servicios' => $modelServicio->findAll(),
-            'clients' => $modelServicio->findAll(),
+            'servicios' => $modelServicio->where('estatus', 1)->findAll(),
             'usuarios' => $modelUsuario->findAll(),
             'anfitriones' => $modelAnfitrion->findAll(),
             'municipios' => $modelMunicio->findAll(),
@@ -37,6 +36,17 @@ class Servicios extends BaseController
         ]);
     }
     
+        public function usuarios($id){
+        $modelUsuario = model('UserModel');
+        $modelAnfitrion = model('AnfitrionesModel');
+       
+        return $this->getResponse([
+            'message' => 'Usuarios',
+            'usuario' => $modelUsuario->where('idUsuario', $id)->findAll(),
+            'anfitrion' => $modelAnfitrion->where('idUsuario', $id)->findAll(),
+           
+        ]);
+    }
     public function servicio($id){
         $modelServicio = model('ServiciosModel');
         $modelImagen = model('ImagenesModel');
