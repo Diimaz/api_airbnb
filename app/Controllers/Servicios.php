@@ -141,12 +141,14 @@ class Servicios extends BaseController
     public function servicioReserva($id){
         $modelServicio = model('ServiciosModel');
         $modelTarifa = model('TarifasModel');
+        $modelFechasReservas = model('FechasReservasModel');
 
         $idTarifa = $modelServicio->where('idServicio',$id)->findColumn('idTarifa');
         return $this->getResponse([
             'message' => 'Servicios',
             'servicio' => $modelServicio->where('idServicio',$id)->findAll(),
             'tarifa' => $modelTarifa->where('idTarifa',$idTarifa)->findAll(),
+            'fechasReserva' => $modelFechasReservas->where('idServicio',$id)->findAll()
         ]);
     }
 
