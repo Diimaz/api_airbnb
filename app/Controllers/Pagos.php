@@ -156,4 +156,51 @@ class Pagos extends BaseController
             'message' => 'Pago realizado con exito',
         ]);
     }
+
+    public function confirmarPago(){
+        $input = $this->getRequestInput($this->request);
+        
+        if(!isset($input['fechaEntrada'])){
+            return $this->getResponse([
+                'errors' => [
+                    'message' => 'error no existe fechaEntrada'
+                ]
+            ]);
+        }
+        if(!isset($input['fechaSalida'])){
+            return $this->getResponse([
+                'errors' => [
+                    'message' => 'error no existe fechaSalida'
+                ]
+            ]);
+        }
+        if(!isset($input['idServicio'])){
+            return $this->getResponse([
+                'errors' => [
+                    'message' => 'error no existe servicio'
+                ]
+            ]);
+        }
+
+        $fechaReservaModel = model('FechasReservasModel');
+
+        $fechaEntrada = $input['fechaEntrada'].' 00:00:00';
+        $fechaSalida = $input['fechaSalida'].' 00:00:00';
+
+        $diasReserva = $fechaReservaModel->where('idServicio',$input['idServicio'])->where('fechaSalida >=', $fechaEntrada)->where('fechaEntrada <=', $fechaSalida)->findColumn('idFecha');
+
+        if($diasReserva != null){
+            return $this->getResponse([
+                'message' => 'Ya esta reservado',
+                'dias' => $diasReserva,
+            ]);
+        }
+
+        return $this->getResponse([
+            'message' => 'Esta libre',
+            'dias' => $diasReserva,
+        ]);
+
+        
+    }
 }

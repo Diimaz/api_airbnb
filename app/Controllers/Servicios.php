@@ -117,6 +117,17 @@ class Servicios extends BaseController
         ]);
     }
 
+    public function usuario($id){
+        $modelUsuario = model ('UserModel');
+        $modelAnfitrion = model('AnfitrionesModel');
+
+        return $this->getResponse([
+            'message' => 'Servicios',
+            'usuario' => $modelUsuario->where('idUsuario',$id)->findAll(),
+            'anfitrion' => $modelAnfitrion->where('idUsuario',$id)->findAll()
+        ]);
+    }
+
     public function servicioReserva($id){
         $modelServicio = model('ServiciosModel');
         $modelTarifa = model('TarifasModel');

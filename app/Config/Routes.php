@@ -44,6 +44,7 @@ $routes->post('login', 'Auth::login');
 
 $routes->get('servicios', 'Servicios::servicios');
 $routes->get('servicios/(:num)', 'Servicios::servicio/$1');
+$routes->get('usuarios/(:num)', 'Servicios::usuario/$1');
 $routes->get('servicios/reservas/(:num)', 'Servicios::servicioReserva/$1');
 //$routes->get('anfitriones', 'Client::anfitriones');
 $routes->get('municipioss', 'Servicios::municipioss');
@@ -57,6 +58,7 @@ $routes->get('municipios/(:num)', 'Servicios::municipios/$1');
 
 
 $routes->post('pagos', 'Pagos::pagos');
+$routes->post('confirmar', 'Pagos::confirmarPago');
 $routes->post('filtros', 'Filtros::filtros');
 
 /*
