@@ -16,6 +16,72 @@ class Servicios extends BaseController
         ]);
     }
 
+    public function filtroFechas(){
+        $input = $this->getRequestInput($this->request);
+        
+        if(!isset($input['fechaEntrada'])){
+            return $this->getResponse([
+                'errors' => [
+                    'message' => 'error no existe fechaEntrada'
+                ]
+            ]);
+        }
+        if(!isset($input['fechaSalida'])){
+            return $this->getResponse([
+                'errors' => [
+                    'message' => 'error no existe fechaSalida'
+                ]
+            ]);
+        }
+
+        $fechaReservaModel = model('FechasReservasModel');
+        $serviciosModel = model('ServiciosModel');
+        $modelImagen = model('ImagenesModel');
+        $modelUsuario = model('UserModel');
+        $modelAnfitrion = model('AnfitrionesModel');
+        $modelMunicio = model('MunicipioModel');
+        $modelTarifa = model('TarifasModel');
+        $modelTipoHospedaje = model('TiposHospedajesModel');
+
+        $fechaEntrada = $input['fechaEntrada'].' 00:00:00';
+        $fechaSalida = $input['fechaSalida'].' 00:00:00';
+        
+        $diasReserva = $fechaReservaModel
+        ->where('fechaSalida >=', $fechaEntrada)
+        ->where('fechaEntrada <=', $fechaSalida)
+        ->findColumn('idServicio');
+
+        $arrayServicios = $serviciosModel->findColumn('idServicio');
+
+        if($diasReserva != null){
+            $arrayServicios = array_diff($arrayServicios,$diasReserva);
+        }
+
+        $idUsuario = $input['idUsuario'];
+
+        $idAnfitrion = $modelAnfitrion->where('idUsuario',$idUsuario)->findColumn('idAnfitrion');
+        $arrayAnfitriones = $serviciosModel->findColumn('idAnfitrion');
+        if($arrayAnfitriones == null){
+            $arrayAnfitriones[] = '';
+        }
+        if($idAnfitrion != null){
+            $arrayAnfitriones = array_diff($arrayAnfitriones,array($idAnfitrion[0]));
+        }
+
+        $servicios = $serviciosModel->whereIn('idServicio',$arrayServicios)->whereIn('idAnfitrion',$arrayAnfitriones)->findAll();
+
+        return $this->getResponse([
+            'message' => 'Servicios',
+            'servicios' => $serviciosModel->whereIn('idServicio',$arrayServicios)->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
+            'usuarios' => $modelUsuario->findAll(),
+            'anfitriones' => $modelAnfitrion->findAll(),
+            'municipios' => $modelMunicio->findAll(),
+            'tarifas' => $modelTarifa->findAll(),
+            'tipoHospedaje' => $modelTipoHospedaje->findAll(),
+            'imagenes' => $modelImagen->findAll(),
+        ]);
+    }
+
     public function servicios(){
         $modelServicio = model('ServiciosModel');
         $modelImagen = model('ImagenesModel');
@@ -36,7 +102,7 @@ class Servicios extends BaseController
         ]);
     }
     
-        public function usuarios($id){
+    public function usuarios($id){
         $modelUsuario = model('UserModel');
         $modelAnfitrion = model('AnfitrionesModel');
        
@@ -47,6 +113,40 @@ class Servicios extends BaseController
            
         ]);
     }
+
+    public function serviciosPost(){
+        $input = $this->getRequestInput($this->request);
+        
+        $modelServicio = model('ServiciosModel');
+        $modelImagen = model('ImagenesModel');
+        $modelUsuario = model('UserModel');
+        $modelAnfitrion = model('AnfitrionesModel');
+        $modelMunicio = model('MunicipioModel');
+        $modelTarifa = model('TarifasModel');
+        $modelTipoHospedaje = model('TiposHospedajesModel');
+
+        $idUsuario = $input['idUsuario'];
+
+        $idAnfitrion = $modelAnfitrion->where('idUsuario',$idUsuario)->findColumn('idAnfitrion');
+        $arrayAnfitriones = $modelServicio->findColumn('idAnfitrion');
+        if($arrayAnfitriones == null){
+            $arrayAnfitriones[] = '';
+        }
+        if($idAnfitrion != null){
+            $arrayAnfitriones = array_diff($arrayAnfitriones,array($idAnfitrion[0]));
+        }
+        return $this->getResponse([
+            'message' => 'Servicios',
+            'servicios' => $modelServicio->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
+            'usuarios' => $modelUsuario->findAll(),
+            'anfitriones' => $modelAnfitrion->findAll(),
+            'municipios' => $modelMunicio->findAll(),
+            'tarifas' => $modelTarifa->findAll(),
+            'tipoHospedaje' => $modelTipoHospedaje->findAll(),
+            'imagenes' => $modelImagen->findAll(),
+        ]);
+    }
+
     public function servicio($id){
         $modelServicio = model('ServiciosModel');
         $modelImagen = model('ImagenesModel');

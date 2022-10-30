@@ -9,7 +9,7 @@ class Pagos extends BaseController
 {
     public function pagos(){
         $input = $this->getRequestInput($this->request);
-
+        
         if(!isset($input['fechaEntrada'])){
             return $this->getResponse([
                 'errors' => [
@@ -103,6 +103,18 @@ class Pagos extends BaseController
         $serviciosModel = model('ServiciosModel');
         $fechaReservaModel = model('FechasReservasModel');
 
+        $fechaEntrada = $input['fechaEntrada'].' 00:00:00';
+        $fechaSalida = $input['fechaSalida'].' 00:00:00';
+        
+        $diasReserva = $fechaReservaModel->where('idServicio',$input['idServicio'])->where('fechaSalida >=', $fechaEntrada)->where('fechaEntrada <=', $fechaSalida)->findColumn('idFecha');
+
+        if($diasReserva != null){
+            return $this->getResponse([
+                'message' => 'Ya esta reservado',
+                'dias' => $diasReserva,
+            ]);
+        }
+
         $dataPago = [
             'fechaEntrada' => $input['fechaEntrada'],
             'fechaSalida' => $input['fechaSalida'],
@@ -140,17 +152,6 @@ class Pagos extends BaseController
                 'message' => 'error'
             ]);
         }
-
-        /*$actualizarServicio = [
-            'idServicio' => $input['idServicio'], 
-            'disponibilidad' => 1,
-        ];
-        
-        if(!$serviciosModel->save($actualizarServicio)){
-            return $this->getResponse([
-                'message' => 'error'
-            ]);
-        }*/
         
         return $this->getResponse([
             'message' => 'Pago realizado con exito',
@@ -186,7 +187,7 @@ class Pagos extends BaseController
 
         $fechaEntrada = $input['fechaEntrada'].' 00:00:00';
         $fechaSalida = $input['fechaSalida'].' 00:00:00';
-
+        
         $diasReserva = $fechaReservaModel->where('idServicio',$input['idServicio'])->where('fechaSalida >=', $fechaEntrada)->where('fechaEntrada <=', $fechaSalida)->findColumn('idFecha');
 
         if($diasReserva != null){
