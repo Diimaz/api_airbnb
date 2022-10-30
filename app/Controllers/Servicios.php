@@ -137,7 +137,7 @@ class Servicios extends BaseController
         }
         return $this->getResponse([
             'message' => 'Servicios',
-            'servicios' => $modelServicio->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
+            'servicios' => $modelServicio->whereIn('idAnfitrion',$arrayAnfitriones)->where('estatus', 1)->findAll(),
             'usuarios' => $modelUsuario->findAll(),
             'anfitriones' => $modelAnfitrion->findAll(),
             'municipios' => $modelMunicio->findAll(),

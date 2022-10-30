@@ -66,7 +66,7 @@ class Filtros extends BaseController
         if($input['idAnfitrion'] == 'all' || $input['idAnfitrion'] == null){
             $arrayAnfitriones = $anfitrionModel->findColumn('idAnfitrion');
         }else{
-            $arrayAnfitriones = $anfitrionModel-Where('idAnfitrion',$input['idAnfitrion'])->findColumn('idAnfitrion');
+            $arrayAnfitriones = $anfitrionModel->Where('idAnfitrion',$input['idAnfitrion'])->findColumn('idAnfitrion');
             if($arrayAnfitriones == null){
                 return $this->getResponse([
                     'message' => 'Este anfitrion no existe',
