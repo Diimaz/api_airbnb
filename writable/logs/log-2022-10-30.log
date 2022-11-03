@@ -1,0 +1,79 @@
+CRITICAL - 2022-10-30 10:36:07 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:36:11 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:36:17 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:36:22 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:38:33 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:38:42 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:45:43 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:45:56 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:46:57 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 10:47:29 --> Call to undefined function App\Controllers\Where()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 11:30:12 --> Undefined array key "idUsuario"
+#0 C:\laragon\www\api_airbnb\app\Controllers\Filtros.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\laragon\\www\\...', 110)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-30 12:42:32 --> Call to a member function findColumn() on array
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->serviciosPost()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-30 12:42:37 --> Call to a member function findColumn() on array
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->serviciosPost()
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

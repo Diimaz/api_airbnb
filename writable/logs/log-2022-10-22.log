@@ -1,0 +1,59 @@
+CRITICAL - 2022-10-22 20:00:45 --> Call to undefined function App\Controllers\modle()
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('3')
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-22 20:13:30 --> Call to undefined method App\Models\PoliticasCancelacionModel::politicaCancelacion
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(100): CodeIgniter\Model->__call('politicaCancela...', Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('9')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-22 20:14:07 --> Call to undefined method App\Models\PoliticasCancelacionModel::politicaCancelacion
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(100): CodeIgniter\Model->__call('politicaCancela...', Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('9')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-22 20:14:49 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::whereIn() must be of the type string or null, array given, called in C:\laragon\www\api_airbnb\system\Model.php on line 728
+#0 C:\laragon\www\api_airbnb\system\Model.php(728): CodeIgniter\Database\BaseBuilder->whereIn(Array)
+#1 C:\laragon\www\api_airbnb\app\Models\PoliticasCancelacionModel.php(20): CodeIgniter\Model->__call('whereIn', Array)
+#2 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(100): App\Models\PoliticasCancelacionModel->politicaCancelacion(Array)
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('9')
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#5 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-22 20:15:10 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::whereIn() must be of the type string or null, array given, called in C:\laragon\www\api_airbnb\system\Model.php on line 728
+#0 C:\laragon\www\api_airbnb\system\Model.php(728): CodeIgniter\Database\BaseBuilder->whereIn(Array)
+#1 C:\laragon\www\api_airbnb\app\Models\PoliticasCancelacionModel.php(20): CodeIgniter\Model->__call('whereIn', Array)
+#2 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(100): App\Models\PoliticasCancelacionModel->politicaCancelacion(Array)
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('9')
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#5 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-22 20:18:27 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::findAll()
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(100): App\Models\PoliticasCancelacionModel->politicaCancelacion(Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('9')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-22 20:20:45 --> Operand should contain 1 column(s)
+CRITICAL - 2022-10-22 20:20:45 --> Operand should contain 1 column(s)
+#0 C:\laragon\www\api_airbnb\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\api_airbnb\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\api_airbnb\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\api_airbnb\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\api_airbnb\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\api_airbnb\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(102): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('9')
+#8 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#9 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}

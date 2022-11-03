@@ -1,0 +1,27 @@
+CRITICAL - 2022-10-23 10:42:20 --> Undefined variable: modelTarifa
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(123): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 123, Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('3')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-23 10:51:42 --> Call to undefined method App\Models\TiposHospedajesModel::tiposHospedaje
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(131): CodeIgniter\Model->__call('tiposHospedaje', Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('3')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-23 10:59:23 --> Call to a member function pais() on null
+#0 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('3')
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-23 11:00:44 --> Call to undefined method App\Models\MunicipioModel::municipioID
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(139): CodeIgniter\Model->__call('municipioID', Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->servicio('3')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

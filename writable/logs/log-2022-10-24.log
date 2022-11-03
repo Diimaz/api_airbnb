@@ -1,0 +1,91 @@
+CRITICAL - 2022-10-24 15:36:08 --> Argument 1 passed to App\Controllers\BaseController::getResponse() must be of the type array, string given, called in C:\laragon\www\api_airbnb\app\Controllers\Pagos.php on line 14
+#0 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(14): App\Controllers\BaseController->getResponse('No existe entra...', 400)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-24 19:27:53 --> Undefined variable: validar
+#0 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 87, Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-24 19:29:34 --> Undefined variable: validar
+#0 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 87, Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-24 19:30:37 --> Argument 1 passed to App\Controllers\BaseController::getResponse() must be of the type array, string given, called in C:\laragon\www\api_airbnb\app\Controllers\Pagos.php on line 87
+#0 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(87): App\Controllers\BaseController->getResponse('errors', 'errores')
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-24 19:31:59 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count(1234)
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:32:23 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count(12345678)
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:32:31 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count(123456789)
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:32:53 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count(123456789)
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:32:59 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count(12345678)
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:33:17 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count('12345678')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:34:00 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\laragon\\www\\...', 54, Array)
+#1 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(54): count('12345678')
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#4 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-24 19:37:58 --> Undefined variable: validar
+#0 C:\laragon\www\api_airbnb\app\Controllers\Pagos.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 88, Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Pagos->pagos()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pagos))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
