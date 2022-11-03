@@ -1,7 +1,0 @@
-CRITICAL - 2022-10-26 09:52:58 --> Undefined variable $modelAnfitrion
-#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\laragon\\www\\...', 46)
-#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->usuarios('1')
-#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
-#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
-#5 {main}
