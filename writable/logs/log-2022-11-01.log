@@ -1,0 +1,7 @@
+CRITICAL - 2022-11-01 10:07:22 --> Undefined index: foto
+#0 C:\laragon\www\api_airbnb\app\Controllers\Servicios.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\laragon\\www\\...', 93, Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Servicios->prueba()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicios))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

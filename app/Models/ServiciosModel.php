@@ -22,7 +22,7 @@ class ServiciosModel extends Model{
     protected $deletedField  = 'date_delete';
 
     public function servicio($id){
-        $servicio = $this->asArray()->where(['idServicio' => $id]);
+        $servicio = $this->asArray()->where(['idServicio' => $id])->where('estatus',1);
 
         if (!$servicio) {
             throw new \Exception('Could not find client for specified ID');

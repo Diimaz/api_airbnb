@@ -42,9 +42,10 @@ $routes->get('user', 'Servicios::index');
 
 $routes->post('login', 'Auth::login');
 
-$routes->get('servicios', 'Servicios::servicios');
+//$routes->get('servicios', 'Servicios::servicios');
 $routes->post('serviciosPost', 'Servicios::serviciosPost');
-$routes->get('servicios/(:num)', 'Servicios::servicio/$1');
+//$routes->get('servicios/(:num)', 'Servicios::servicio/$1');
+$routes->post('verServicio', 'Servicios::verServicio');
 $routes->get('usuarios/(:num)', 'Servicios::usuario/$1');
 $routes->get('servicios/reservas/(:num)', 'Servicios::servicioReserva/$1');
 //$routes->get('anfitriones', 'Client::anfitriones');
@@ -61,6 +62,7 @@ $routes->get('municipios/(:num)', 'Servicios::municipios/$1');
 $routes->post('pagos', 'Pagos::pagos');
 $routes->post('confirmar', 'Pagos::confirmarPago');
 $routes->post('filtros', 'Filtros::filtros');
+$routes->post('filtro', 'Filtros::dataFiltros');
 $routes->post('prueba','Servicios::prueba');
 
 $routes->post('filtroFechas','Servicios::filtroFechas');

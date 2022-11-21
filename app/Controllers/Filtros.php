@@ -11,11 +11,11 @@ class Filtros extends BaseController
     public function filtros(){
         $this->eliminarFechasReservadas();
         $input = $this->getRequestInput($this->request);
-        if(!isset($input['nombre'])){
+        /*if(!isset($input['nombre'])){
             return $this->getResponse([
                 'message' => 'error'
             ]);
-        }
+        }*/
         if(!isset($input['precioInicio'])){
             return $this->getResponse([
                 'message' => 'error'
@@ -63,9 +63,21 @@ class Filtros extends BaseController
         $anfitrionModel = model('AnfitrionesModel');
         $municipioModel = model('MunicipioModel');
         $tipoHospedajeModel = model('TiposHospedajesModel');
+        $modelImagen = model('ImagenesModel');
+        $modelUsuario = model('UserModel');
+
+        $idUsuario = $input['idUsuario'];
 
         if($input['idAnfitrion'] == 'all' || $input['idAnfitrion'] == null){
-            $arrayAnfitriones = $anfitrionModel->findColumn('idAnfitrion');
+            $idAnfitrion = $anfitrionModel->where('idUsuario',$idUsuario)->findColumn('idAnfitrion');
+            $arrayAnfitriones = $servicioModel->findColumn('idAnfitrion');
+            if($arrayAnfitriones == null){
+                $arrayAnfitriones[] = '';
+            }
+            if($idAnfitrion != null){
+                $arrayAnfitriones = array_diff($arrayAnfitriones,array($idAnfitrion[0]));
+            }
+            //$arrayAnfitriones = $anfitrionModel->findColumn('idAnfitrion');
         }else{
             $arrayAnfitriones = $anfitrionModel->Where('idAnfitrion',$input['idAnfitrion'])->findColumn('idAnfitrion');
             if($arrayAnfitriones == null){
@@ -102,23 +114,13 @@ class Filtros extends BaseController
             $arrayHospedajes[] = $input['idTipoHospedaje'];
         }
 
-        $arrayNombres = $servicioModel->findColumn('nombre');
+        //$arrayNombres = $servicioModel->findColumn('nombre');
 
         $arrayTarifas = $tarifaModel->where('precio >=', $input['precioInicio'])->where('precio <=', $input['precioFinal'])->findColumn('idTarifa');
         if($arrayTarifas == null){
             $arrayTarifas[] = 0;
         }
-        $idUsuario = $input['idUsuario'];
-
-        $idAnfitrion = $anfitrionModel->where('idUsuario',$idUsuario)->findColumn('idAnfitrion');
-        $arrayAnfitriones = $servicioModel->findColumn('idAnfitrion');
-        if($arrayAnfitriones == null){
-            $arrayAnfitriones[] = '';
-        }
-        if($idAnfitrion != null){
-            $arrayAnfitriones = array_diff($arrayAnfitriones,array($idAnfitrion[0]));
-        }
-        $servicios = $servicioModel->whereIn('idAnfitrion',$arrayAnfitriones)->whereIn('nombre', $arrayNombres)->whereIn('idAnfitrion', $arrayAnfitriones)->whereIn('idTarifa',$arrayTarifas)->whereIn('idMunicipio',$arrayMunicipios)->whereIn('idTipoHospedaje',$arrayHospedajes)->findAll();
+        $servicios = $servicioModel->where('estatus',1)->whereIn('idAnfitrion',$arrayAnfitriones)->whereIn('idTarifa',$arrayTarifas)->whereIn('idMunicipio',$arrayMunicipios)->whereIn('idTipoHospedaje',$arrayHospedajes)->findAll();
         
         if($servicios == null){
             return $this->getResponse([
@@ -127,8 +129,59 @@ class Filtros extends BaseController
         }
         return $this->getResponse([
             'message' => 'Filtro realizado',
-            'servicios' => $servicios
+            'servicios' => $servicios,
+            'usuarios' => $modelUsuario->findAll(),
+            'anfitriones' => $anfitrionModel->findAll(),
+            'municipios' => $municipioModel->findAll(),
+            'tarifas' => $tarifaModel->findAll(),
+            'tipoHospedaje' => $tipoHospedajeModel->findAll(),
+            'imagenes' => $modelImagen->findAll(),
         ]);
+    }
+
+    public function dataFiltros(){
+        $this->eliminarFechasReservadas();
+
+        $input = $this->getRequestInput($this->request);
+        if(!isset($input['idUsuario'])){
+            return $this->getResponse([
+                'message' => 'error'
+            ]);
+        }
+
+        $modelServicio = model('ServiciosModel');
+        $modelImagen = model('ImagenesModel');
+        $modelUsuario = model('UserModel');
+        $modelAnfitrion = model('AnfitrionesModel');
+        $modelMunicio = model('MunicipioModel');
+        $modelTarifa = model('TarifasModel');
+        $modelTipoHospedaje = model('TiposHospedajesModel');
+        $modelPais = model('PaisesModel');
+        $modelDepartamentos = model('DepartamentoModel');
+
+        $idUsuario = $input['idUsuario'];
+
+        $idAnfitrion = $modelAnfitrion->where('idUsuario',$idUsuario)->findColumn('idAnfitrion');
+        $arrayAnfitriones = $modelServicio->findColumn('idAnfitrion');
+        if($arrayAnfitriones == null){
+            $arrayAnfitriones[] = '';
+        }
+        if($idAnfitrion != null){
+            $arrayAnfitriones = array_diff($arrayAnfitriones,$idAnfitrion);
+        }
+        
+        return $this->getResponse([
+            'message' => 'Data filtro',
+            'servicios' => $modelServicio->where('estatus', 1)->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
+            'usuarios' => $modelUsuario->findAll(),
+            'anfitriones' => $modelAnfitrion->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
+            'municipios' => $modelMunicio->findAll(),
+            'tarifas' => $modelTarifa->findAll(),
+            'tipoHospedaje' => $modelTipoHospedaje->findAll(),
+            'imagenes' => $modelImagen->findAll(),
+            'paises' => $modelPais->findAll(),
+            'departamentos' => $modelDepartamentos->findAll()
+        ]); 
     }
 
     private function eliminarFechasReservadas(){

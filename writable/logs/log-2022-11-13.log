@@ -1,0 +1,7 @@
+CRITICAL - 2022-11-13 15:47:32 --> Use of undefined constant undefined - assumed 'undefined' (this will throw an Error in a future version of PHP)
+#0 C:\laragon\www\api_airbnb\app\Controllers\Filtros.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\laragon\\www\\...', 67, Array)
+#1 C:\laragon\www\api_airbnb\system\CodeIgniter.php(825): App\Controllers\Filtros->filtros()
+#2 C:\laragon\www\api_airbnb\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Filtros))
+#3 C:\laragon\www\api_airbnb\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\api_airbnb\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

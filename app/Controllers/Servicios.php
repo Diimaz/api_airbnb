@@ -59,6 +59,10 @@ class Servicios extends BaseController
             $arrayServicios = array_diff($arrayServicios,$diasReserva);
         }
 
+        if($arrayServicios == null){
+            $arrayServicios[] ='';
+        }
+
         $idUsuario = $input['idUsuario'];
 
         $idAnfitrion = $modelAnfitrion->where('idUsuario',$idUsuario)->findColumn('idAnfitrion');
@@ -74,7 +78,7 @@ class Servicios extends BaseController
 
         return $this->getResponse([
             'message' => 'Servicios',
-            'servicios' => $serviciosModel->whereIn('idServicio',$arrayServicios)->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
+            'servicios' => $serviciosModel->where('estatus',1)->whereIn('idServicio',$arrayServicios)->whereIn('idAnfitrion',$arrayAnfitriones)->findAll(),
             'usuarios' => $modelUsuario->findAll(),
             'anfitriones' => $modelAnfitrion->findAll(),
             'municipios' => $modelMunicio->findAll(),
@@ -84,7 +88,7 @@ class Servicios extends BaseController
         ]);
     }
 
-    public function servicios(){
+    /*public function servicios(){
         $this->eliminarFechasReservadas();
         $modelServicio = model('ServiciosModel');
         $modelImagen = model('ImagenesModel');
@@ -103,20 +107,7 @@ class Servicios extends BaseController
             'tipoHospedaje' => $modelTipoHospedaje->findAll(),
             'imagenes' => $modelImagen->findAll(),
         ]);
-    }
-    
-    public function usuarios($id){
-        $this->eliminarFechasReservadas();
-        $modelUsuario = model('UserModel');
-        $modelAnfitrion = model('AnfitrionesModel');
-       
-        return $this->getResponse([
-            'message' => 'Usuarios',
-            'usuario' => $modelUsuario->where('idUsuario', $id)->findAll(),
-            'anfitrion' => $modelAnfitrion->where('idUsuario', $id)->findAll(),
-           
-        ]);
-    }
+    }*/
 
     public function serviciosPost(){
         $this->eliminarFechasReservadas();
@@ -142,7 +133,7 @@ class Servicios extends BaseController
         }
         return $this->getResponse([
             'message' => 'Servicios',
-            'servicios' => $modelServicio->whereIn('idAnfitrion',$arrayAnfitriones)->where('estatus', 1)->findAll(),
+            'servicios' => $modelServicio->where('estatus',1)->whereIn('idAnfitrion',$arrayAnfitriones)->where('estatus', 1)->findAll(),
             'usuarios' => $modelUsuario->findAll(),
             'anfitriones' => $modelAnfitrion->findAll(),
             'municipios' => $modelMunicio->findAll(),
@@ -152,8 +143,9 @@ class Servicios extends BaseController
         ]);
     }
 
-    public function servicio($id){
+    public function verServicio(){
         $this->eliminarFechasReservadas();
+        $input = $this->getRequestInput($this->request);
         $modelServicio = model('ServiciosModel');
         $modelImagen = model('ImagenesModel');
         $modelAnfitrion = model('AnfitrionesModel');
@@ -173,6 +165,25 @@ class Servicios extends BaseController
         $modelTarifa = model('TarifasModel');
         $modelIdioma = model('IdiomasModel');
         $modelTipoHospedaje = model('TiposHospedajesModel');
+        $idUsuarioComprobar = $input['idUsuario'];
+        $id = $input['id'];
+
+        $comprobar = $modelServicio->where('estatus',1)->where('idServicio',$id)->findAll();
+
+        if($comprobar == null){
+            return $this->getResponse([
+                'message' => 'Error servicio no disponible'
+            ]);
+        }
+
+        $idAnfitrionComprobar = $modelAnfitrion->where('idUsuario',$idUsuarioComprobar)->findColumn('idAnfitrion');
+        $comprobarAnfitrion = $modelServicio->where('idServicio',$id)->where('idAnfitrion',$idAnfitrionComprobar)->findAll();
+
+        if($comprobarAnfitrion != null){
+            return $this->getResponse([
+                'message' => 'Error servicio no disponible'
+            ]);
+        }
 
         $idAnfitrion = $modelServicio->where('idServicio',$id)->findColumn('idAnfitrion');
         $idUsuario = $modelAnfitrion->where('idAnfitrion',$idAnfitrion)->findColumn('idUsuario');
@@ -200,6 +211,7 @@ class Servicios extends BaseController
         if($arraySaludSeguridad == null){
             $arraySaludSeguridad[] = '';
         }
+
         $modelServicio->servicio($id);
         $modelImagen->imagenes($id);
         $modelUsuario->usuario($idUsuario);
@@ -269,6 +281,7 @@ class Servicios extends BaseController
 
     public function departamentos($id){
         $modelDepartamento = model('DepartamentoModel');
+        
         $modelDepartamento->departamento($id);
         return $this->getResponse([
             'departamentos' => $modelDepartamento->findAll()

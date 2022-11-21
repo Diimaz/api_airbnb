@@ -29,8 +29,7 @@ class DepartamentoModel extends Model
         return $departamento;
     }
 
-    public function departamento($id)
-    {
+    public function departamento($id){
         $departamentos = $this->asArray()->where(['idPais' => $id]);
 
         if (!$departamentos) {
