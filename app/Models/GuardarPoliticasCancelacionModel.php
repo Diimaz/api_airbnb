@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class GuardarPoliticasCancelacionModel extends Model{
     
-    protected $table      = 'tbl_guardar_politicas_cancelacion';
+    protected $table      = 'tbl_guardar_politicas_de_cancelacion';
     protected $primaryKey = 'idGuardar';
 
     protected $returnType     = 'object';
